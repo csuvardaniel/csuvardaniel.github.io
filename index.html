@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>My Bio</title>
     <style>
         body {
@@ -92,10 +94,15 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 0.9em;
+            transition: background-color 0.3s ease;
         }
 
         .copy-btn:hover {
             background-color: #004999;
+        }
+
+        .copy-btn.copied {
+            background-color: #28a745;
         }
 
         .shared-folder {
@@ -155,7 +162,7 @@
             <h2>Contact Me</h2>
             <div class="contact-item">
                 <span>Email: csuvardaniel@proton.me</span>
-                <button class="copy-btn" onclick="copyToClipboard('csuvardaniel@proton.me')">Copy</button>
+                <button class="copy-btn" onclick="copyToClipboard('csuvardaniel@proton.me', this)">Copy</button>
             </div>
         </div>
 
@@ -171,9 +178,17 @@
     </footer>
 
     <script>
-        function copyToClipboard(text) {
+        function copyToClipboard(text, button) {
             navigator.clipboard.writeText(text).then(() => {
-                alert('Copied: ' + text);
+                // Change button text to "Copied!" and color to green
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+
+                // Revert button text and color after 3 seconds
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 3000);
             }).catch(err => {
                 console.log('Something went wrong', err);
             });
