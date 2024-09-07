@@ -19,7 +19,7 @@
     <!-- Prevent the page from being embedded -->
     <meta http-equiv="X-Frame-Options" content="DENY">
     <title>My Bio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS for security -->
+    <link id="stylesheet" rel="stylesheet" href="pc.css"> <!-- Default CSS -->
 </head>
 <body>
     <div class="container">
@@ -46,6 +46,12 @@
             <div class="hobby">
                 <h3>RISC (arm&risc-v) technologia</h3>
             </div>
+        </div>
+
+        <!-- Mobile/PC Identifier -->
+        <div class="device-info">
+            <h2>Your Device</h2>
+            <p id="deviceType">Loading device type...</p> <!-- This will be updated dynamically -->
         </div>
 
         <div class="contact">
