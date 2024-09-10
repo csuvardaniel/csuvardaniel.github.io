@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Detect if the user is on mobile and load appropriate CSS
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const userAgent = navigator.userAgent.toLowerCase();
     const stylesheet = document.getElementById('stylesheet');
 
-    if (/android|iPad|iPhone|iPod/.test(userAgent.toLowerCase())) {
-        stylesheet.setAttribute('href', 'mobile.css'); // Load mobile CSS
+    // Load mobile or desktop stylesheet based on the user agent
+    if (/android|ipad|iphone|ipod/.test(userAgent)) {
+        stylesheet.setAttribute('href', 'mobile.css');
     } else {
-        stylesheet.setAttribute('href', 'pc.css'); // Load desktop CSS
+        stylesheet.setAttribute('href', 'pc.css');
     }
 
     // Copy to clipboard functionality for email
