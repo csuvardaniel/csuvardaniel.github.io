@@ -191,17 +191,21 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll(".copy-btn").forEach(btn => {
+            const copyButtons = document.querySelectorAll(".copy-btn");
+
+            copyButtons.forEach(btn => {
                 btn.addEventListener("click", () => {
-                    const email = btn.getAttribute("data-email");
-                    navigator.clipboard.writeText(email).then(() => {
-                        btn.textContent = "Copied!";
-                        btn.classList.add("copied");
-                        setTimeout(() => {
-                            btn.textContent = "Copy Email";
-                            btn.classList.remove("copied");
-                        }, 2000);
-                    }).catch(err => console.error('Could not copy email: ', err));
+                    const email = btn.dataset.email;
+                    navigator.clipboard.writeText(email)
+                        .then(() => {
+                            btn.textContent = "Copied!";
+                            btn.classList.add("copied");
+                            setTimeout(() => {
+                                btn.textContent = "Copy Email";
+                                btn.classList.remove("copied");
+                            }, 2000);
+                        })
+                        .catch(err => console.error('Could not copy email:', err));
                 });
             });
         });
