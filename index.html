@@ -29,8 +29,8 @@
         }
         body {
             font-family: 'PlayfairDisplayRegular', serif;
-            background-color: #ffffff; /* Changed to white for better contrast */
-            color: #222222; /* Darker text color for contrast */
+            background-color: #ffffff; /* White background for high contrast */
+            color: #222222; /* Dark text for better readability */
             margin: 0;
             padding: 20px;
             line-height: 1.7;
@@ -41,7 +41,7 @@
             min-height: 100vh;
         }
         .container {
-            background: #f7f7f7; /* Light background for the container */
+            background: #f7f7f7; /* Light grey for the container */
             padding: 20px;
             border-radius: 10px;
             max-width: 100%;
@@ -53,17 +53,17 @@
         h1 {
             text-align: center;
             font-size: 2.2em;
-            color: #333; /* Slightly lighter color for headings */
+            color: #333; /* Darker heading color */
             margin-bottom: 15px;
         }
         h2 {
-            color: #444; /* Maintained dark color for subheadings */
+            color: #444; /* Dark subheading color */
             font-size: 1.7em;
             margin-top: 20px;
             margin-bottom: 10px;
         }
         h3 {
-            color: #444; /* Maintained dark color for hobby headings */
+            color: #444; /* Dark color for hobby headings */
             font-size: 1.3em;
         }
         p {
@@ -91,20 +91,22 @@
             font-size: 1.1em;
         }
         .contact-item a {
-            color: #007bff; /* Blue color for links */
+            color: #0056b3; /* Dark blue for email link */
             text-decoration: none;
+            font-weight: bold; /* Make the link text bold */
         }
         .contact-item a:hover {
             text-decoration: underline;
         }
         .copy-btn {
-            background-color: #007bff; /* Blue button */
+            background-color: #007bff; /* Bright blue button */
             color: #ffffff; /* White text for contrast */
             border: none;
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 0.9em;
+            transition: background-color 0.3s; /* Smooth transition */
         }
         .copy-btn:hover {
             background-color: #0056b3; /* Darker blue on hover */
@@ -120,9 +122,10 @@
             text-align: center;
         }
         #shared-folder a {
-            color: #007bff; /* Blue color for shared folder link */
+            color: #0056b3; /* Dark blue for shared folder link */
             text-decoration: none;
             font-size: 1.1em;
+            font-weight: bold; /* Make the link text bold */
         }
         #shared-folder a:hover {
             text-decoration: underline;
