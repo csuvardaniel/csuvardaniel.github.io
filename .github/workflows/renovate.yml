@@ -1,7 +1,15 @@
 name: Renovate
+
 on:
   schedule:
     - cron: '0 * * * *'  # Runs at the start of every hour
+  workflow_dispatch:      # Allows manual triggering
+  push:                   # Triggers on any push to the repository
+    branches:
+      - '**'             # Matches all branches
+    paths:
+      - '**'             # Matches all files
+
 jobs:
   renovate:
     runs-on: ubuntu-latest
