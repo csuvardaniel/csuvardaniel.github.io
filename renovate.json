@@ -1,0 +1,22 @@
+{
+  "extends": ["config:base"],
+  "prConcurrentLimit": 5,    // Allows 5 PRs at the same time
+  "prHourlyLimit": 2,        // Limits PR creation rate
+  "labels": ["dependencies"], // Adds labels to PRs
+  "branchPrefix": "renovate/",
+
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Minor and Patch Dependencies", // Groups minor/patch updates
+      "automerge": true // Auto-merge minor updates
+    },
+    {
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "Major Dependencies", // Groups major updates separately
+      "automerge": false // No auto-merge for major updates
+    }
+  ]
+}
