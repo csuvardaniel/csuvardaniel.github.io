@@ -1,22 +1,15 @@
 name: Renovate
-
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs at the start of every hour
-  workflow_dispatch:      # Allows manual triggering
-  push:                   # Triggers on any push to the repository
-    branches:
-      - '**'             # Matches all branches
-    paths:
-      - '**'             # Matches all files
+    - cron: '0/15 * * * *'  # Runs every 15 minutes
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
       - name: Run Renovate
-        uses: renovatebot/github-action@v41.0.11
+        uses: renovatebot/github-action@v41.0.10
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
+          repositories: "csuvardaniel/csuvardaniel.github.io"
