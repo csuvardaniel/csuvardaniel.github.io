@@ -1,23 +1,23 @@
 {
   "extends": ["config:base"],
   "autodiscover": true
-  "prConcurrentLimit": 5,    // Allows 5 PRs at the same time
-  "prHourlyLimit": 2,        // Limits PR creation rate
-  "labels": ["dependencies"], // Adds labels to PRs
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "labels": ["dependencies"],
   "branchPrefix": "renovate/",
 
   "packageRules": [
     {
       "matchDepTypes": ["dependencies", "devDependencies"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "Minor and Patch Dependencies", // Groups minor/patch updates
-      "automerge": true // Auto-merge minor updates
+      "groupName": "Minor and Patch Dependencies",
+      "automerge": true
     },
     {
       "matchDepTypes": ["dependencies", "devDependencies"],
       "matchUpdateTypes": ["major"],
-      "groupName": "Major Dependencies", // Groups major updates separately
-      "automerge": false // No auto-merge for major updates
+      "groupName": "Major Dependencies",
+      "automerge": false
     }
   ]
 }
