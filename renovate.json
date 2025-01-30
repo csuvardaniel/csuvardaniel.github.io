@@ -1,6 +1,6 @@
 {
   "extends": ["config:base"],
-  "repositories": ["csuvardaniel/csuvardaniel.github.io"]
+  "autodiscover": true
   "prConcurrentLimit": 5,    // Allows 5 PRs at the same time
   "prHourlyLimit": 2,        // Limits PR creation rate
   "labels": ["dependencies"], // Adds labels to PRs
