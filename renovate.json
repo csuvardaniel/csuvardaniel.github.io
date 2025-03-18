@@ -1,0 +1,23 @@
+{
+  "extends": ["config:base"],
+  "autodiscover": true
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "labels": ["dependencies"],
+  "branchPrefix": "renovate/",
+
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Minor and Patch Dependencies",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "Major Dependencies",
+      "automerge": false
+    }
+  ]
+}
